@@ -1,14 +1,22 @@
 #!/usr/bin/python3
-"""
-Amenity class, a subclass of BaseModel
-"""
-from models.base_model import BaseModel
+""" State Module for HBNB project """
+from models.base_model import BaseModel, Base
+# SQLAlchemy modules
+from sqlalchemy import Column, String, ForeignKey, Integer, Float
 
 
-class Amenity(BaseModel):
+class Amenity(BaseModel, Base):
+    """Defines a class Amenity
+
+    Attributes:
+        __tablename__ (str): amenities
+
+        name (str): name of amenity.
     """
-    A subclass of BaseModel class
-    Public class attribute:
-        name: (str)
-    """
-    name = ""
+
+    __tablename__ = 'amenities'
+    name = Column(String(128), nullable=False)
+
+    def __init__(self, *args, **kwargs):
+        """initializes state"""
+        super().__init__(*args, **kwargs)
