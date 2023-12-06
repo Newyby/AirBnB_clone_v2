@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Fabric script that distributes an archive to web servers """
+execute: fab -f 3-deploy_web_static.py deploy -i ~/.ssh/school -u ubuntu
 from fabric.api import *
 from datetime import datetime
 import os
