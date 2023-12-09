@@ -121,4 +121,3 @@ exec { 'start-nginx':
   ],
 }
 
-Exec['start-nginx']
